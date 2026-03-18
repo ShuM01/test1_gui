@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cine-Search Pro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" data-loading="false">
+    <h1>Cine-Search Pro</h1>
+    <input id="searchBox" type="text" placeholder="Search movies..." />
+
+    <div id="spinner" class="spinner hidden"></div>
+
+    <ul id="results"></ul>
+
+    <template id="result-template">
+      <li class="result-item">
+        <span class="title"></span>
+      </li>
+    </template>
+
+    <div id="details">
+      <h2 id="movie-title"></h2>
+      <p id="movie-overview"></p>
+      <ul id="movie-genres"></ul>
+      <div id="movie-cast"></div>
+      <div id="movie-videos"></div>
+    </div>
+  </div>
+
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
