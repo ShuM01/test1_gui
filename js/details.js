@@ -11,7 +11,7 @@ export function fetchMovieDetails(id) {
     .then(results => {
       const [details, credits, videos] = results;
 
-      // --- Movie details ---
+      //details
       if (details.status === "fulfilled") {
         const d = details.value;
         document.getElementById("detail-title").textContent = d.title;
@@ -60,7 +60,7 @@ export function fetchMovieDetails(id) {
         }
       }
 
-      // --- Credits ---
+     
       if (credits.status === "fulfilled") {
         const castGrid = document.getElementById("detail-cast");
         castGrid.innerHTML = "";
@@ -95,7 +95,7 @@ export function fetchMovieDetails(id) {
         castGrid.appendChild(frag);
       }
 
-      // --- Videos / Trailer ---
+  
       if (videos.status === "fulfilled") {
         const trailerEl = document.getElementById("detail-trailer");
         trailerEl.innerHTML = "";
@@ -116,7 +116,7 @@ export function fetchMovieDetails(id) {
         }
       }
 
-      // --- Show content ---
+  
       document.getElementById("detail-empty").style.display = "none";
       const detailContent = document.getElementById("detail-content");
       detailContent.classList.remove("visible");

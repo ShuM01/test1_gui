@@ -4,7 +4,7 @@ export function initSearch(searchInput, resultList, template, statusBar) {
   let activeIndex = -1;
   let searchTimeout;
 
-  // Handle typing with debounce
+
   searchInput.addEventListener("input", () => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
@@ -15,12 +15,11 @@ export function initSearch(searchInput, resultList, template, statusBar) {
         activeIndex = -1;
         return;
       }
-      // No restriction on query length anymore
+  
       searchMovies(query, resultList, template, statusBar);
     }, 300);
   });
 
-  // Keyboard navigation
   searchInput.addEventListener("keydown", e => {
   const items = resultList.querySelectorAll(".result-item");
   if (!items.length) return;
@@ -56,7 +55,7 @@ function setActive(idx, items) {
 const API_KEY = "8705b70081389f31836147d1b213f39e";
 
 function searchMovies(query, resultList, template, statusBar) {
-  statusBar.textContent = "SEARCHING…";
+
 
   fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`, {
     cache: "no-store"
@@ -76,8 +75,6 @@ function searchMovies(query, resultList, template, statusBar) {
         statusBar.textContent = "NO RESULTS";
         return;
       }
-
-      statusBar.textContent = "↑↓ navigate   Enter select   Esc clear";
 
       const frag = new DocumentFragment();
       data.results.slice(0, 10).forEach(movie => {
