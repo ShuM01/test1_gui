@@ -67,7 +67,7 @@ function searchMovies(query, resultList, template, statusBar) {
       return res.json();
     })
     .then(data => {
-      console.log("Search data:", data); // Debugging log
+      console.log("Search data:", data); 
 
       resultList.innerHTML = "";
 

@@ -111,7 +111,7 @@ header {
   display: grid;
   grid-template-columns: 56px 1fr auto;
   gap: 12px;
-  align-items: flex-start;   /* align poster, text, rating at the top */
+  align-items: flex-start;
   padding: 14px 24px;
   cursor: pointer;
   border-bottom: 1px solid var(--border);
@@ -145,7 +145,7 @@ header {
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding-left: 40px;         /* <-- shift text more to the right */
+  padding-left: 40px;
 }
 
 .result-title {
