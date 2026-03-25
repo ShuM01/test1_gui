@@ -4,32 +4,88 @@
   <meta charset="UTF-8">
   <title>Cine-Search Pro</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <div id="app" data-loading="false">
-    <h1>Cine-Search Pro</h1>
-    <input id="searchBox" type="text" placeholder="Search movies..." />
-
-    <div id="spinner" class="spinner hidden"></div>
-
-    <ul id="results"></ul>
-
-    <template id="result-template">
-      <li class="result-item">
-        <span class="title"></span>
-      </li>
-    </template>
-
-    <div id="details">
-      <h2 id="movie-title"></h2>
-      <p id="movie-overview"></p>
-      <ul id="movie-genres"></ul>
-      <div id="movie-cast"></div>
-      <div id="movie-videos"></div>
+<div class="app">
+  <header>
+    <div class="wordmark">CINE<span>SEARCH</span> <span class="muted">PRO</span></div>
+    <div class="search-wrap" data-loading="false">
+      <span class="search-icon">🔍</span>
+      <input id="search-input" type="text" placeholder="Search for a film" autocomplete="off">
+      <div class="spinner"></div>
     </div>
+    <div class="status-bar" id="status-bar">READY</div>
+  </header>
+
+<aside class="sidebar">
+  <div class="results-header" id="results-header">RESULTS</div>
+  <template id="result-template">
+    <li class="result-item" tabindex="0">
+      <img class="result-poster" alt="Poster">
+      <div class="result-info">
+        <div class="result-title"></div>
+        <div class="result-meta"></div>
+      </div>
+      <div class="result-rating"></div>
+    </li>
+  </template>
+  <ul id="result-list"></ul>
+  <div class="keyboard-hint">
+    <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+    <span><kbd>Enter</kbd> select</span>
+    <span><kbd>Esc</kbd> clear</span>
   </div>
+</aside>
 
 
-  <script type="module" src="js/script.js"></script>
+  <template id="result-template">
+  <li class="result-item" tabindex="0">
+    <img class="result-poster" alt="Poster">
+    <div class="result-info">
+      <div class="result-title"></div>
+      <div class="result-meta"></div>
+    </div>
+    <div class="result-rating"></div>
+  </li>
+</template>
+
+
+  <main class="detail-panel">
+    <div class="detail-empty" id="detail-empty">
+      <div class="detail-empty-icon">🎬</div>
+      <p>SELECT A FILM TO INSPECT</p>
+    </div>
+    <div class="detail-content" id="detail-content">
+      <div id="detail-backdrop-wrap"></div>
+      <div class="detail-backdrop-overlay">
+        <div class="detail-poster-row">
+          <div id="detail-poster-wrap"></div>
+          <div class="detail-title-block">
+            <div class="detail-title" id="detail-title"></div>
+            <div class="detail-tagline" id="detail-tagline"></div>
+            <div class="detail-badges" id="detail-badges"></div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-section full">
+          <div class="section-label">Overview</div>
+          <p class="overview-text" id="detail-overview"></p>
+        </div>
+        <div class="detail-section">
+          <div class="section-label">Cast</div>
+          <div class="cast-grid" id="detail-cast"></div>
+        </div>
+        <div class="detail-section">
+          <div class="section-label">Trailer</div>
+          <div id="detail-trailer"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="module" src="js/script.js"></script>
 </body>
 </html>

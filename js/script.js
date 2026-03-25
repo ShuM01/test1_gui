@@ -1,10 +1,10 @@
 import { initSearch } from "./search.js";
 import { fetchMovieDetails } from "./details.js";
 
-const searchBox   = document.getElementById("searchBox");
-const resultsList = document.getElementById("results");
-const template    = document.getElementById("result-template");
-const app         = document.getElementById("app");
+const searchInput = document.getElementById("search-input");
+const resultList = document.getElementById("result-list");
+const template = document.getElementById("result-template");
+const searchWrap = document.querySelector(".search-wrap");
+const statusBar = document.getElementById("status-bar");
 
-// Connect search logic with details logic
-initSearch(searchBox, resultsList, template, app, fetchMovieDetails);
+initSearch(searchInput, resultList, template, statusBar);
